@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Simple AdBlocker",
+    "version": "1.2",
+    "description": "A simple ad blocker extension for Chrome",
+    "permissions": [
+      "webRequest",
+      "declarativeNetRequest",
+      "declarativeNetRequestFeedback",
+      "activeTab",
+      "storage"
+    ],
+    "background": {
+      "service_worker": "background.js"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ],
+    "host_permissions": ["<all_urls>"],
+    "icons": {
+      "48": "icons/Blocked_48x48.png",
+      "128": "icons/Blocked_128x128.png",
+      "16": "icons/Blocked_16x16.png"
+    }
+  }
+  
